@@ -1,0 +1,332 @@
+/* ========== SPEAKING OUT TO STOP BULLYING COLOR PALETTE ========== */
+:root {
+  /* Bright school-safety / anti-bullying colors */
+  --yellow: #FFD54A;   /* warm, bold yellow */
+  --red:    #D1322F;   /* strong red like the title text */
+  --blue:   #2F80ED;   /* clear, bright blue */
+  --green:  #4CAF50;   /* positive “correct” green */
+  --orange: #FF8A3C;   /* accent orange for progress bar, borders */
+  --black:  #222222;   /* text / outline */
+  --beige:  #FFF6E6;   /* soft background behind the card */
+}
+
+/* ========== GLOBAL ========== */
+body {
+  background: var(--beige);
+  color: var(--black);
+  font-family: "Comic Sans MS","Comic Neue",sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Simple card container */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 28px 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+}
+
+/* ========== HEADER ========== */
+h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--red);
+  font-size: 2.1em;
+}
+
+h2 {
+  margin-top: 8px;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+/* ========== COVER SECTION ========== */
+#coverSection {
+  display: none;
+}
+
+#coverSection.visible {
+  display: block;
+}
+
+.cover-layout {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cover-left,
+.cover-right {
+  flex: 1 1 260px;
+}
+
+.cover-img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  display: block;
+  margin: 0 auto;       /* centers the image horizontally */
+}
+
+.story-title {
+  font-size: 1.8em;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.story-subtitle {
+  font-size: 1.1em;
+  margin-bottom: 18px;
+}
+
+.cover-list {
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 0.98em;
+}
+
+.cover-list li {
+  margin-bottom: 6px;
+}
+
+/* Big “Start Review” area */
+.cover-actions {
+  margin-top: 18px;
+}
+
+.cover-note {
+  font-size: 0.95em;
+  margin-top: 10px;
+}
+
+/* ========== NAV TABS ========== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px 0 22px;
+  gap: 10px;
+}
+
+.tab {
+  background: var(--yellow);
+  border: 2px solid var(--red);
+  padding: 10px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.05em;
+  transition: background .2s, transform .1s;
+}
+
+.tab:hover {
+  background: #ffe98e;
+  transform: translateY(-1px);
+}
+
+.tab.active {
+  background: var(--red);
+  color: #fff;
+}
+
+/* ========== BUTTONS ========== */
+button {
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+  border-radius: 22px;
+  padding: 11px 26px;
+  border: 2px solid #7b1719;
+  cursor: pointer;
+  font-size: 1.05em;
+  transition: background .2s, transform .1s, box-shadow .1s;
+}
+
+.btn-primary:hover {
+  background: #c53335;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ========== QUIZ VIEW ========== */
+#view-quiz {
+  display: none;
+}
+
+#view-quiz.visible {
+  display: block;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.4em;
+  color: var(--red);
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+#counter {
+  text-align: center;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+/* ========== PROGRESS BAR ========== */
+#progressContainer {
+  width: 100%;
+  height: 16px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, var(--yellow), var(--orange));
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+/* ========== QUESTION & CHOICES ========== */
+#prompt {
+  font-size: 1.05em;
+  white-space: pre-wrap;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.choice {
+  background: var(--blue);
+  border: 2px solid var(--orange);
+  padding: 12px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: left;
+  transition: background .2s;
+}
+
+.choice:hover {
+  background: #94ddf2;
+}
+
+.choice strong {
+  margin-right: 5px;
+}
+
+.choice.correct {
+  background: var(--green) !important;
+  color: #fff !important;
+}
+
+.choice.wrong {
+  background: var(--red) !important;
+  color: white !important;
+}
+
+/* NEW: for multi-select “pick TWO” questions */
+.choice.selected {
+  outline: 3px solid var(--black);
+  filter: brightness(0.95);
+}
+
+/* When locked, stop hover effect via a wrapper class */
+#choices.locked .choice {
+  cursor: default;
+}
+
+/* ========== FEEDBACK + NEXT BUTTON ========== */
+#feedback {
+  margin-top: 10px;
+  font-size: 1.15em;
+}
+
+.next {
+  margin: 25px auto;
+  display: block;
+  padding: 10px 25px;
+  border-radius: 22px;
+  background: var(--yellow);
+  border: 2px solid var(--red);
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ========== RESULT VIEW ========== */
+#view-result {
+  display: none;
+}
+
+#view-result.visible {
+  display: block;
+}
+
+.score-line {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 10px 0 15px;
+  font-weight: bold;
+}
+
+.result-message {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+/* Return / To Top button */
+.return {
+  margin-top: 30px;
+  padding: 10px 28px;
+  border-radius: 22px;
+  background: var(--yellow);
+  border: 2px solid var(--red);
+  cursor: pointer;
+  font-size: 1.05em;
+}
+
+/* ========== CONFETTI ========== */
+.confetti {
+  pointer-events: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+  #app {
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 18px 16px 22px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  .cover-layout {
+    flex-direction: column;
+  }
+}

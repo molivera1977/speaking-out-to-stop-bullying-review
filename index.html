@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>"Speaking Out to Stop Bullying" Review</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- COVER SECTION -->
+  <section id="coverSection" class="view visible">
+       <h1 class="center">Welcome to the "Speaking Out to Stop Bullying" Review</h1>
+
+    <div class="tabs">
+      <button class="tab" data-view="vocab">Vocabulary</button>
+      <button class="tab" data-view="comp">Comprehension</button>
+      <button class="tab" data-view="cloze">Cloze</button>
+    </div>
+
+    <img src="assets/cover.png" class="cover-img">
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="view">
+    <h2 id="sectionTitle" class="center"></h2>
+
+    <div id="counter" class="center" style="margin-bottom:10px;"></div>
+
+    <div id="progressContainer">
+      <div id="progressBar"></div>
+    </div>
+
+    <div id="prompt" class="q-card"></div>
+
+    <div id="choices" class="choices"></div>
+
+    <div id="feedback" class="center" style="margin-top:10px;"></div>
+
+    <div class="center">
+      <button id="nextBtn" class="hidden">Next</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="view-result" class="view">
+    <h2 class="center">Your Results</h2>
+
+    <p id="scoreLine" class="center"></p>
+    <p id="message" class="center"></p>
+
+    <div class="center">
+      <button id="toTop">Return to Cover</button>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="data/vocab_bank.js"></script>
+  <script src="data/comp.js"></script>
+  <script src="data/cloze.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
