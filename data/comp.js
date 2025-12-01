@@ -120,7 +120,7 @@ window.COMP_BANK = [
     "answer": 3
   },
   {
-    "q": "Inference – Active Bystanders\nThe text says students can be “active bystanders” by “placing th...eing targeted.” What can you infer is the reason for doing this?",
+    "q": "Inference – Active Bystanders\nThe text says students can be “active bystanders” by “placing themselves next to the person being targeted.” What can you infer is the reason for doing this?",
     "choices": [
       "Standing beside the victim shows “the bully that the target is not alone.”",
       "It allows the bully to choose a new target.",
